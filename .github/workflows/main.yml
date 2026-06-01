@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.1
@@ -24,7 +24,7 @@ jobs:
       run: msbuild XbfAnalyzer.sln /p:Configuration=Release /p:Platform="Any CPU"
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v6
       with:
         name: XbfAnalyzer-Executable
         path: XbfAnalyzer/bin/Release/
